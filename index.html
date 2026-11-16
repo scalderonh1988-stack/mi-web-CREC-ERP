@@ -7,32 +7,52 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
-        header { background: #ffffff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        header { background: #ffffff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         header h2 { color: #2563eb; }
+        nav a { margin-left: 20px; text-decoration: none; color: #475569; font-weight: 500; }
+        nav a:hover { color: #2563eb; }
         .hero { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .btn { background: #ffffff; color: #2563eb; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn { background: #ffffff; color: #2563eb; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn:hover { background: #f1f5f9; transform: translateY(-2px); }
-        .features { display: flex; justify-content: center; gap: 30px; padding: 60px 20px; max-width: 1100px; margin: auto; flex-wrap: wrap; }
-        .card { background: white; padding: 30px; border-radius: 8px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; }
+        .section-title { text-align: center; font-size: 2rem; margin: 60px 0 20px; color: #1e293b; }
+        .features, .pricing { display: flex; justify-content: center; gap: 30px; padding: 20px 20px 60px; max-width: 1100px; margin: auto; flex-wrap: wrap; }
+        .card { background: white; padding: 30px; border-radius: 8px; width: 320px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #2563eb; }
         .card h3 { color: #2563eb; margin-bottom: 15px; }
-        footer { text-align: center; padding: 20px; background: #1e293b; color: white; margin-top: 40px; font-size: 0.9rem; }
+        .price { font-size: 1.8rem; font-weight: bold; color: #1e293b; margin: 15px 0; }
+        .card ul { list-style: none; text-align: left; margin: 20px 0; padding: 0 10px; }
+        .card ul li { margin-bottom: 10px; font-size: 0.95:rem; color: #475569; }
+        .card ul li::before { content: "✓ "; color: #2563eb; font-weight: bold; }
+        .contact-container { background: white; max-width: 600px; margin: 40px auto 80px; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .btn-submit { background: #2563eb; color: white; width: 100%; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 1rem; border: none; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #1d4ed8; }
+        footer { text-align: center; padding: 20px; background: #1e293b; color: white; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h2>CREC-ERP</h2>
-        <a href="#contacto" class="btn" style="padding: 8px 20px; font-size: 0.9rem; background: #2563eb; color: white;">Contacto</a>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#caracteristicas">Características</a>
+            <a href="#precios">Precios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section id="inicio" class="hero">
         <h1>Optimiza y gestiona tu negocio al instante</h1>
         <p>La plataforma inteligente diseñada para comercios y minimarkets que automatiza ventas, inventarios y caja diaria.</p>
-        <a href="#contacto" class="btn">Empezar Ahora</a>
+        <a href="#precios" class="btn">Ver Planes</a>
     </section>
 
+    <h2 id="caracteristicas" class="section-title">Características Principales</h2>
     <section class="features">
         <div class="card">
             <h3>Punto de Venta (POS)</h3>
@@ -48,8 +68,54 @@
         </div>
     </section>
 
-    <footer id="contacto">
-        <p>&copy; 2026 CREC-ERP. Todos los derechos reservados. | Alojado de forma gratuita en GitHub Pages.</p>
+    <h2 id="precios" class="section-title">Planes y Precios</h2>
+    <section class="pricing">
+        <div class="card">
+            <h3>Plan Emprendedor</h3>
+            <div class="price">Gratis / Básico</div>
+            <ul>
+                <li>1 Usuario activo</li>
+                <li>Control de hasta 100 productos</li>
+                <li>Punto de venta básico</li>
+                <li>Soporte por comunidad</li>
+            </ul>
+            <a href="#contacto" class="btn" style="background: #2563eb; color: white; width: 100%; text-align: center;">Elegir Plan</a>
+        </div>
+        <div class="card" style="border-top-color: #10b981; transform: scale(1.03);">
+            <h3 style="color: #10b981;">Plan Pro (Comercio)</h3>
+            <div class="price">$19.900 <span style="font-size: 1rem; font-weight: normal;">/mes</span></div>
+            <ul>
+                <li>Usuarios ilimitados</li>
+                <li>Productos ilimitados (con lector de códigos)</li>
+                <li>Cierre de caja y reportes avanzados</li>
+                <li>Soporte prioritario</li>
+            </ul>
+            <a href="#contacto" class="btn" style="background: #10b981; color: white; width: 100%; text-align: center;">Elegir Plan Pro</a>
+        </div>
+    </section>
+
+    <h2 id="contacto" class="section-title">Contáctanos</h2>
+    <div class="contact-container">
+        <!-- Puedes conectar este formulario fácilmente con servicios gratuitos como Formspree o Netlify Forms -->
+        <form action="https://formspree.io/f/tu-codigo-aqui" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre o el de tu comercio">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje o Plan de interés</label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 CREC-ERP. Todos los derechos reservados. | Alojado en GitHub Pages.</p>
     </footer>
 
 </body>
