@@ -15,10 +15,32 @@
         nav a { margin-left: 20px; text-decoration: none; color: #94a3b8; font-weight: 500; transition: color 0.2s; }
         nav a:hover { color: #38bdf8; }
         
-        .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; color: white; }
+        .hero { text-align: center; padding: 80px 20px 40px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; color: white; }
         .hero h1 { font-size: 2.8rem; margin-bottom: 20px; color: #f8fafc; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 1.2rem; margin-bottom: 35px; color: #94a3b8; max-width: 650px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #94a3b8; max-width: 650px; margin-left: auto; margin-right: auto; }
         
+        /* Contenedor profesional para el video */
+        .video-container {
+            max-width: 850px;
+            margin: 40px auto 20px;
+            padding: 0 15px;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+            background: #1e293b;
+        }
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            outline: none;
+        }
+
         .btn { background: #38bdf8; color: #0f172a; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease; border: none; cursor: pointer; }
         .btn:hover { background: #0ea5e9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3); }
         
@@ -71,7 +93,20 @@
         <section id="inicio" class="hero">
             <h1>Optimiza y gestiona tu negocio al instante</h1>
             <p>La plataforma inteligente diseñada para comercios y minimarkets que automatiza ventas, inventarios y caja diaria.</p>
-            <a href="#precios" class="btn">Ver Planes</a>
+            
+            <!-- Contenedor del video local -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls poster="">
+                        <source src="crec-erp-definitivo.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="#precios" class="btn">Ver Planes</a>
+            </div>
         </section>
 
         <section id="caracteristicas">
